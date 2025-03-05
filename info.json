@@ -1,0 +1,20 @@
+{
+  "name": "alloy-smelting",
+  "title": "Alloy Smelting",
+  "description": "",
+  "author": "SafTheLamb",
+  "version": "0.0.1",
+  "factorio_version": "2.0",
+  "homepage": "https://github.com/sapphiriza/fm-alloy-smelting",
+  "dependencies": [
+    "base >= 2.0.32",
+    "fdsl >= 0.2.0",
+    "? space-age",
+    "? bztin",
+    "? bzlead",
+    "? bztitanium",
+    "? bzzirconium",
+    "? aai-industry",
+    "? hot-metals"
+  ]
+}
