@@ -1,20 +1,22 @@
 {
   "name": "alloy-smelting",
   "title": "Alloy Smelting",
-  "description": "",
+  "description": "Kilns for recipes that need hotter ore more specific temperatures.",
   "author": "SafTheLamb",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "factorio_version": "2.0",
-  "homepage": "https://github.com/sapphiriza/fm-alloy-smelting",
+  "homepage": "https://github.com/SafTheLamb/fm-alloy-smelting",
   "dependencies": [
     "base >= 2.0.32",
-    "fdsl >= 0.2.0",
+    "fdsl >= 0.1.8",
     "? space-age",
+    "? crushing-industry",
     "? bztin",
     "? bzlead",
     "? bztitanium",
     "? bzzirconium",
-    "? aai-industry",
-    "? hot-metals"
+    "? hot-metals",
+    "(?) Glass",
+    "(?) aai-industry"
   ]
 }
