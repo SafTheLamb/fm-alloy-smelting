@@ -57,6 +57,8 @@ data:extend({
     collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
     selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
     damaged_trigger_effect = hit_effects.rock(),
+    circuit_wire_max_distance = furnace_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["stone-furnace"],
     crafting_categories = {"kiln-smelting", "organic-or-kiln-smelting"},
     crafting_speed = 1,
     energy_usage = "90kW",
@@ -150,6 +152,8 @@ data:extend({
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
+    circuit_wire_max_distance = furnace_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["electric-furnace"],
     module_slots = 4,
     icon_draw_specification = {shift = {0, -0.1}},
     icons_positioning = {

@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+  Bugfixes:
+    - Kilns can now be connected to circuit networks just like furnaces
+  Compatibility:
+    - Compatibility changes have been moved to their own files in prototypes/compat/
+    - CI: Smelting Crushed bz ores (Lead and Titanium) now require catalysts like their non-crushed counterparts
+  Modding:
+    - A light API has been introduced with functions for modifying recipes
+    - AlloySmelting.smelt_in_kiln() changes a recipe's category to "kiln-smelting" and sets auto_recycle=false
+    - AlloySmelting.add_catalyst() adds an ingredient to the recipe, optionally scaling the rest of the recipe beforehand
+
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
   Major Features:
     - Initial release
