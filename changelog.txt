@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+  Compatibility:
+    - Fixed smelting time for Lead plate from crushed ore
+    - Properly move smelting of crushed lead and titanium ore to "kiln-smelting"
+
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
   Bugfixes:
     - Kilns can now be connected to circuit networks just like furnaces
