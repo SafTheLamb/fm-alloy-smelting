@@ -2,6 +2,7 @@ local frep = require("__fdsl__.lib.recipe")
 local ftech = require("__fdsl__.lib.technology")
 
 -------------------------------------------------------------------------- Lead
+
 if mods["bzlead"] then
   if settings.startup["alloy-smelting-coke"].value then
     AlloySmelting.smelt_in_kiln("lead-plate", {type="item", name="coke", amount=1}, 2.5)
@@ -21,7 +22,8 @@ if mods["bzlead"] then
   ftech.add_unlock("kiln-smelting", "lead-expansion-bolt")
 end
 
--- Tin
+-------------------------------------------------------------------------- Tin
+
 if mods["bztin"] then
   AlloySmelting.smelt_in_kiln("solder")
   frep.change_time("solder", {scale=6.4})
@@ -35,22 +37,34 @@ if mods["bztin"] then
     ftech.add_prereq("basic-fluid-handling", "kiln-smelting")
   end
 
+  -- Bronze
   if settings.startup["bztin-more-intermediates"].value == "bronze" then
     if settings.startup["alloy-smelting-coke"].value then
-      AlloySmelting.smelt_in_kiln("bronze-plate")
-      frep.add_ingredient("bronze-plate", {type="item", name="coke", amount=4})
+      AlloySmelting.smelt_in_kiln("bronze-plate", {type="item", name="coke", amount=2})
     end
 
     if mods["space-age"] and settings.startup["alloy-smelting-metallurgy"].value then
-      frep.add_ingredient("casting-bronze", {type="item", name="carbon", amount=1})
-      frep.scale_ingredient("casting-bronze", "molten-copper", {amount=5})
-      frep.scale_ingredient("casting-bronze", "molten-tin", {amount=5})
-      frep.scale_result("casting-bronze", "bronze-plate", {amount=5})
+      AlloySmelting.add_catalyst("casting-bronze", {type="item", name="carbon", amount=1}, 5)
+    end
+  end
+
+  -- Glass
+  if mods["crushing-industry"] and settings.startup["crushing-industry-glass"].value then
+    if settings.startup["alloy-smelting-tin-glass"].value then
+      AlloySmelting.smelt_in_kiln("glass", {type="item", name="tin-plate", amount=1}, 4)
+      if mods["space-age"] then
+        AlloySmelting.add_catalyst("casting-glass", {type="item", name="tin-plate", amount=1}, 2.5)
+      end
+    end
+  elseif mods["aai-industry"] then
+    if settings.startup["alloy-smelting-tin-glass"].value then
+      AlloySmelting.smelt_in_kiln("glass", {type="item", name="tin-plate", amount=1}, 4)
     end
   end
 end
 
--- Titanium
+-------------------------------------------------------------------------- Titanium
+
 if mods["bztitanium"] then
   if settings.startup["alloy-smelting-coke"].value then
     AlloySmelting.smelt_in_kiln("titanium-plate")
