@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.4
+  Balancing:
+    - Increase Coke value from 1MJ to 1.6MJ
+  Compatibility:
+    - Respect "Hide from player crafting" setting from Crushing Industry
+
+---------------------------------------------------------------------------------------------------
 Version: 0.1.3
   Bugfixes:
     - Tungsten carbide can now be crafted in both assembling machines and electric kilns

@@ -44,7 +44,7 @@ data:extend({
     order = "b[chemistry]-A[coke]",
     hidden = not settings.startup["alloy-smelting-coke"].value,
     fuel_category = "chemical",
-    fuel_value = "1MJ",
+    fuel_value = "1.6MJ",
     fuel_emissions_multiplier = 1.5,
     inventory_move_sound = item_sounds.solid_fuel_inventory_move,
     pick_sound = item_sounds.solid_fuel_inventory_pickup,

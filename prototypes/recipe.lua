@@ -57,7 +57,7 @@ if settings.startup["alloy-smelting-coke"].value then
         enabled = false,
         allow_productivity = true,
         auto_recycle = false,
-        hide_from_player_crafting = true,
+        hide_from_player_crafting = settings.startup["crushing-industry-hide-player-crafting"].value,
         energy_required = 6.4,
         ingredients = {{type="item", name="crushed-coal", amount=1}},
         results = {{type="item", name="coke", amount=2}}
