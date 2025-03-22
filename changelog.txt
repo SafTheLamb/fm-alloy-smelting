@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.3
+  Bugfixes:
+    - Tungsten carbide can now be crafted in both assembling machines and electric kilns
+    - Fix organic or kiln smelting being added by Wooden Industry instead
+
+---------------------------------------------------------------------------------------------------
 Version: 0.1.2
   Compatibility:
     - Fixed smelting time for Lead plate from crushed ore

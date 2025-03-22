@@ -33,8 +33,7 @@ end
 -------------------------------------------------------------------------- Vulcanus
 
 if mods["space-age"] then
-  ftech.add_prereq("planet-discovery-vulcanus", "kiln-smelting-2")
-  AlloySmelting.smelt_in_kiln("tungsten-carbide")
+  data.raw.recipe["tungsten-carbide"].category = "kiln-smelting-or-crafting"
   frep.change_time("tungsten-carbide", {scale=6.4})
 end
 
@@ -45,13 +44,24 @@ if mods["space-age"] then
   data.raw.recipe["burnt-spoilage"].allow_decomposition = false
 end
 
--------------------------------------------------------------------------- Furnaces
+-------------------------------------------------------------------------- Furnaces and assemblers
 
 data.raw.item["stone-furnace"].order = "a[furnace]-a[stone]"
 data.raw.item["steel-furnace"].order = "a[furnace]-b[steel]"
 data.raw.item["electric-furnace"].order = "a[furnace]-c[electric]"
 if mods["aai-industry"] then
   data.raw.item["industrial-furnace"].order = "a[furnace]-d[industrial]"
+end
+
+for _,machine in pairs(data.raw["assembling-machine"]) do
+  for _,category in pairs(machine.crafting_categories) do
+    if category == "crafting-with-fluid" then
+      table.insert(machine.crafting_categories, "kiln-smelting-or-crafting")
+    end
+    if category == "organic" then
+      table.insert(machine.crafting_categories, "organic-or-kiln-smelting")
+    end
+  end
 end
 
 -------------------------------------------------------------------------- Misc mods
