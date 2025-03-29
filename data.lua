@@ -11,6 +11,6 @@ require("prototypes.technology")
 
 require("base-data-updates")
 
-require("prototypes.compat.bzores")
+require("prototypes.compat.bz-ores")
 require("prototypes.compat.crushing-industry")
 require("prototypes.compat.crushed-bz")

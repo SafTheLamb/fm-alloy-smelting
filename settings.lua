@@ -21,15 +21,15 @@ if mods["space-age"] then
 end
 
 if mods["bztin"] then
-  if (mods["crushing-industry"] and settings.startup["crushing-industry-glass"].value) or mods["aai-industry"] then
-    data:extend({
-      {
-        type = "bool-setting",
-        name = "alloy-smelting-tin-glass",
-        setting_type = "startup",
-        default_value = true,
-        order = "m[misc]-a[tin-glass]"
-      }
-    })
-  end
+  local glass_exists = mods["crushing-industry"] or mods["aai-industry"]
+  data:extend({
+    {
+      type = "bool-setting",
+      name = "alloy-smelting-tin-glass",
+      setting_type = "startup",
+      default_value = true,
+      hidden = not glass_exists,
+      order = "m[misc]-a[tin-glass]"
+    }
+  })
 end

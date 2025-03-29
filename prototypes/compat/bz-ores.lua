@@ -47,18 +47,22 @@ if mods["bztin"] then
       AlloySmelting.add_catalyst("casting-bronze", {type="item", name="carbon", amount=1}, 5)
     end
   end
+end
 
-  -- Glass
-  if mods["crushing-industry"] and settings.startup["crushing-industry-glass"].value then
-    if settings.startup["alloy-smelting-tin-glass"].value then
+-------------------------------------------------------------------------- Tin glass
+
+if mods["bztin"] and settings.startup["alloy-smelting-tin-glass"].value then
+  if settings.startup["alloy-smelting-tin-glass"].value then
+    if mods["crushing-industry"] and settings.startup["crushing-industry-glass"].value then
       AlloySmelting.smelt_in_kiln("glass", {type="item", name="tin-plate", amount=1}, 4)
       if mods["space-age"] then
-        AlloySmelting.add_catalyst("casting-glass", {type="item", name="tin-plate", amount=1}, 2.5)
+        AlloySmelting.add_catalyst("casting-glass", {type="fluid", name="molten-tin", amount=10}, 4)
       end
-    end
-  elseif mods["aai-industry"] then
-    if settings.startup["alloy-smelting-tin-glass"].value then
+    elseif mods["aai-industry"] then
       AlloySmelting.smelt_in_kiln("glass", {type="item", name="tin-plate", amount=1}, 4)
+    end
+    if mods["Glass"] then
+      AlloySmelting.smelt_in_kiln("glass-plate", {type="item", name="tin-plate", amount=1}, 5)
     end
   end
 end
