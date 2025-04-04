@@ -6,6 +6,9 @@
   "version": "0.2.0",
   "factorio_version": "2.0",
   "homepage": "https://github.com/SafTheLamb/fm-alloy-smelting",
+  "package": {
+    "ignore": ["thumbnail.afphoto", "**/*.afphoto", "**/*.ase", "**/*.afphoto~lock~", "**/*.pdn"]
+  },
   "dependencies": [
     "base >= 2.0.32",
     "fdsl >= 0.1.8",
