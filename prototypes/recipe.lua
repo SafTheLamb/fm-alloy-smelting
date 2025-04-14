@@ -16,14 +16,13 @@ data:extend({
     energy_required = 5,
     ingredients = mods["aai-industry"] and {
       {type="item", name="brick-kiln", amount=1},
-      {type="item", name="low-density-structure", amount=5},
-      {type="item", name="refined-concrete", amount=20},
-      {type="item", name="processing-unit", amount=5}
+      {type="item", name="steel-plate", amount=10},
+      {type="item", name="advanced-circuit", amount=10},
+      {type="item", name="concrete", amount=10}
     } or {
-      {type="item", name="processing-unit", amount=5},
-      {type="item", name="refined-concrete", amount=20},
       {type="item", name="steel-plate", amount=20},
-      {type="item", name="low-density-structure", amount=5}
+      {type="item", name="advanced-circuit", amount=10},
+      {type="item", name="concrete", amount=20}
     },
     results = {{type="item", name="electric-kiln", amount=1}}
   },

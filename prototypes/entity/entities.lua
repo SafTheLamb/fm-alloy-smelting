@@ -154,7 +154,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity(),
     circuit_wire_max_distance = furnace_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["electric-furnace"],
-    module_slots = 4,
+    module_slots = 2,
     icon_draw_specification = {shift = {0, -0.1}},
     icons_positioning = {
       {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.8}}

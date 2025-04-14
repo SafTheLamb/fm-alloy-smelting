@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2025-04-14
+  Changes:
+    - Move technology changes to data updates
+    - Change kiln smelting technology to always be a research trigger
+    - Simplify recipe for electric kiln to be a slightly more expensive electric furnace
+    - Reduce module slot count for electric kiln back to 2
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2025-03-29
   Compatibility:
