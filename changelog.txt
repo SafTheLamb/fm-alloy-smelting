@@ -6,6 +6,8 @@ Date: 2025-04-14
     - Change kiln smelting technology to always be a research trigger
     - Simplify recipe for electric kiln to be a slightly more expensive electric furnace
     - Reduce module slot count for electric kiln back to 2
+  Compatibility:
+    - AAI Industry: Add kiln smelting recipes to Industrial furnace, and increase its cost to include LDS and an electric kiln
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2025-03-29
