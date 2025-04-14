@@ -1,23 +1,16 @@
 local frep = require("__fdsl__.lib.recipe")
-local ftech = require("__fdsl__.lib.technology")
 
 -------------------------------------------------------------------------- Coke
 
 if settings.startup["alloy-smelting-coke"].value then
-  ftech.add_unlock("kiln-smelting", "coke")
-  if mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value then
-    ftech.add_unlock("oil-processing", "coke-from-crushed-coal")
-  end
-
   AlloySmelting.smelt_in_kiln("steel-plate", {type="item", name="coke", amount=1})
-  ftech.add_prereq("steel-processing", "kiln-smelting")
 
   if mods["space-age"] then
     data.raw.item["carbon"].fuel_value = "5MJ"
     if mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value then
-      frep.replace_ingredient("carbon", "coal", {type="item", name="coke", amount=8})
+      frep.replace_ingredient("carbon", "crushed-coal", {type="item", name="coke", amount=12})
     else
-      frep.replace_ingredient("carbon", "coal", {type="item", name="coke", amount=5})
+      frep.replace_ingredient("carbon", "coal", {type="item", name="coke", amount=8})
     end
   end
 end
