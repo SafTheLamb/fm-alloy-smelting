@@ -56,10 +56,29 @@ if settings.startup["alloy-smelting-coke"].value then
         enabled = false,
         allow_productivity = true,
         auto_recycle = false,
-        hide_from_player_crafting = settings.startup["crushing-industry-hide-player-crafting"].value,
+        hide_from_player_crafting = settings.startup["crushing-industry-hide-player-crafting"].value == true,
         energy_required = 6.4,
         ingredients = {{type="item", name="crushed-coal", amount=1}},
         results = {{type="item", name="coke", amount=2}}
+      }
+    })
+  end
+  if mods["space-age"] then
+    data:extend({
+      {
+        type = "recipe",
+        name = "coke-from-carbon",
+        icons = {
+          {icon="__space-age__/graphics/icons/carbon.png", shift={-12, -12}, scale=0.4},
+          {icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
+        },
+        category = "kiln-smelting",
+        enabled = false,
+        allow_productivity = true,
+        auto_recycle = false,
+        energy_required = 6.4,
+        ingredients = {{type="item", name="carbon", amount=1}},
+        results = {{type="item", name="coke", amount=4}}
       }
     })
   end

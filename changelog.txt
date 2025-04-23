@@ -1,7 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.1
-Date: ????
+Date: 2025-04-23
+  Minor Features:
+    - Add recipe to make coke from carbon
   Changes:
+    - Undo adding coke to the recipe for carbon (since that'd cause a weird loop)
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2025-04-14

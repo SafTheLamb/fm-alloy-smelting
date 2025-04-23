@@ -7,11 +7,6 @@ if settings.startup["alloy-smelting-coke"].value then
 
   if mods["space-age"] then
     data.raw.item["carbon"].fuel_value = "5MJ"
-    if mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value then
-      frep.replace_ingredient("carbon", "crushed-coal", {type="item", name="coke", amount=12})
-    else
-      frep.replace_ingredient("carbon", "coal", {type="item", name="coke", amount=8})
-    end
   end
 end
 
@@ -61,4 +56,6 @@ end
 
 if mods["hot-metals"] then
   table.insert(HotMetals.craftingCategories, "kiln-smelting")
+  table.insert(HotMetals.craftingCategories, "kiln-smelting-or-crafting")
+  table.insert(HotMetals.craftingCategories, "organic-or-kiln-smelting")
 end
