@@ -53,6 +53,7 @@ if settings.startup["alloy-smelting-coke"].value then
           {icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
         },
         category = "kiln-smelting",
+        order = "b[chemistry]-A[coke]-b[crushed]",
         enabled = false,
         allow_productivity = true,
         auto_recycle = false,
@@ -73,6 +74,7 @@ if settings.startup["alloy-smelting-coke"].value then
           {icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
         },
         category = "kiln-smelting",
+        order = "b[chemistry]-A[coke]-d[carbon]",
         enabled = false,
         allow_productivity = true,
         auto_recycle = false,
