@@ -19,11 +19,22 @@ end
 if settings.startup["alloy-smelting-coke"].value then
   ftech.add_unlock("kiln-smelting", "coke")
   ftech.add_prereq("steel-processing", "kiln-smelting")
-  
+
   if mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value then
     local tech = find_unlock_tech("crushed-coal")
     if tech then
       ftech.add_unlock(tech.name, "coke-from-crushed-coal")
+    end
+  end
+
+  if mods["space-age"] then
+    local carbon_tech = find_unlock_tech("carbon")
+    if carbon_tech then
+      ftech.add_unlock(carbon_tech.name, "coke-from-carbon")
+    end
+    local carbonic_tech = find_unlock_tech("carbonic-asteroid-crushing")
+    if carbonic_tech and carbonic_tech ~= carbon_tech then
+      ftech.add_unlock(carbonic_tech.name, "coke-from-carbon")
     end
   end
 end
