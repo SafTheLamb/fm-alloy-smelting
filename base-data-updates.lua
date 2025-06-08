@@ -21,14 +21,14 @@ end
 -------------------------------------------------------------------------- Vulcanus
 
 if mods["space-age"] then
-  data.raw.recipe["tungsten-carbide"].category = "kiln-smelting-or-crafting"
+  frep.add_category("tungsten-carbide", "kiln-smelting")
   frep.change_time("tungsten-carbide", {scale=6.4})
 end
 
 -------------------------------------------------------------------------- Gleba
 
 if mods["space-age"] then
-  data.raw.recipe["burnt-spoilage"].category = "organic-or-kiln-smelting"
+  frep.add_category("burnt-spoilage", "kiln-smelting")
   data.raw.recipe["burnt-spoilage"].allow_decomposition = false
 end
 
