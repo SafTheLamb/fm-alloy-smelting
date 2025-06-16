@@ -2,6 +2,7 @@
 Version: 0.3.4
 Date: ????
   Changes:
+    - Add electric kiln smelting category (credit: S6X)
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 2025-06-08
