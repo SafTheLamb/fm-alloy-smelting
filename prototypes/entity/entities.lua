@@ -160,7 +160,7 @@ data:extend({
       {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.8}}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    crafting_categories = {"kiln-smelting", "organic-or-kiln-smelting", "kiln-smelting-or-crafting"},
+    crafting_categories = {"kiln-smelting", "organic-or-kiln-smelting", "kiln-smelting-or-crafting", "electric-kiln-smelting"},
     crafting_speed = 2,
     energy_usage = "180kW",
     energy_source = {
