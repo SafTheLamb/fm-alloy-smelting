@@ -40,5 +40,6 @@ if settings.startup["alloy-smelting-coke"].value then
 end
 
 -------------------------------------------------------------------------- Kilns
-
-ftech.add_unlock("advanced-material-processing-2", "electric-kiln")
+if settings.startup["alloy-smelting-create-kilns"].value then
+	ftech.add_unlock("advanced-material-processing-2", "electric-kiln")
+end

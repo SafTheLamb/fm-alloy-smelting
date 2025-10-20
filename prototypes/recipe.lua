@@ -1,32 +1,34 @@
-data:extend({
-  {
-    type = "recipe",
-    name = "brick-kiln",
-    enabled = false,
-    ingredients = {
-      {type="item", name="stone-furnace", amount=1},
-      {type="item", name="stone-brick", amount=5}
-    },
-    results = {{type="item", name="brick-kiln", amount=1}}
-  },
-  {
-    type = "recipe",
-    name = "electric-kiln",
-    enabled = false,
-    energy_required = 5,
-    ingredients = mods["aai-industry"] and {
-      {type="item", name="brick-kiln", amount=1},
-      {type="item", name="steel-plate", amount=10},
-      {type="item", name="advanced-circuit", amount=10},
-      {type="item", name="concrete", amount=10}
-    } or {
-      {type="item", name="steel-plate", amount=20},
-      {type="item", name="advanced-circuit", amount=10},
-      {type="item", name="concrete", amount=20}
-    },
-    results = {{type="item", name="electric-kiln", amount=1}}
-  },
-})
+if settings.startup["alloy-smelting-create-kilns"].value then
+	data:extend({
+	  {
+		type = "recipe",
+		name = "brick-kiln",
+		enabled = false,
+		ingredients = {
+		  {type="item", name="stone-furnace", amount=1},
+		  {type="item", name="stone-brick", amount=5}
+		},
+		results = {{type="item", name="brick-kiln", amount=1}}
+	  },
+	  {
+		type = "recipe",
+		name = "electric-kiln",
+		enabled = false,
+		energy_required = 5,
+		ingredients = mods["aai-industry"] and {
+		  {type="item", name="brick-kiln", amount=1},
+		  {type="item", name="steel-plate", amount=10},
+		  {type="item", name="advanced-circuit", amount=10},
+		  {type="item", name="concrete", amount=10}
+		} or {
+		  {type="item", name="steel-plate", amount=20},
+		  {type="item", name="advanced-circuit", amount=10},
+		  {type="item", name="concrete", amount=20}
+		},
+		results = {{type="item", name="electric-kiln", amount=1}}
+	  },
+	})
+end
 
 if settings.startup["alloy-smelting-coke"].value then
   data:extend({

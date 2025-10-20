@@ -8,7 +8,7 @@ if mods["bzlead"] then
     AlloySmelting.smelt_in_kiln("lead-plate", {type="item", name="coke", amount=1}, 2.5)
   end
 
-  if data.raw.item["lead-expansion-bolt"] then
+  if (data.raw.item["electric-kiln"] and data.raw.item["lead-expansion-bolt"]) then
     frep.add_ingredient("electric-kiln", {type="item", name="lead-expansion-bolt", amount=4})
   end
 

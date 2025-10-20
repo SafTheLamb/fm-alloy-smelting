@@ -1,7 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.3.5
-Date: ????
-  Changes:
+Version: 0.4.0
+Date: 2025-10-20
+  Minor Features:
+    - Add option to use default furnaces as kilns instead of adding new entities
+  Modding:
+    - Add optional recipe_category parameter to smelt_in_kiln 
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.4
 Date: 2025-06-16

@@ -1,12 +1,16 @@
 if not AlloySmelting then
-  AlloySmelting = {}
 
-  function AlloySmelting.smelt_in_kiln(recipe_name, catalyst_ingredient, recipe_scale)
+  AlloySmelting = {
+	brick_kiln_categories = {"kiln-smelting", "organic-or-kiln-smelting"},
+	electric_kiln_categories = {"kiln-smelting", "organic-or-kiln-smelting", "kiln-smelting-or-crafting", "electric-kiln-smelting"},
+  }
+  
+  function AlloySmelting.smelt_in_kiln(recipe_name, catalyst_ingredient, recipe_scale, recipe_category)
     local recipe = data.raw.recipe[recipe_name]
     if not recipe then return end
 
     -- update 
-    recipe.category = "kiln-smelting"
+    recipe.category = recipe_category or "kiln-smelting"
     recipe.auto_recycle = false
 
     AlloySmelting.add_catalyst(recipe_name, catalyst_ingredient, recipe_scale)

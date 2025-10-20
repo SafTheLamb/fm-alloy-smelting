@@ -1,3 +1,5 @@
+if (not settings.startup["alloy-smelting-create-kilns"].value) then return end
+
 data:extend({
   {
     type = "corpse",

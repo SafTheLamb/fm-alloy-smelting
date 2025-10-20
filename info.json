@@ -2,18 +2,18 @@
   "name": "alloy-smelting",
   "title": "Alloy Smelting",
   "description": "Kilns for recipes that need hotter ore more specific temperatures.",
-  "author": "SafTheLamb",
-  "version": "0.3.5",
+  "author": "SafTheLamb + S6X",
+  "version": "0.4.0",
   "factorio_version": "2.0",
   "homepage": "https://github.com/SafTheLamb/fm-alloy-smelting",
   "package": {
     "ignore": ["thumbnail.afphoto", "**/*.afphoto", "**/*.ase", "**/*.afphoto~lock~", "**/*.pdn"]
   },
   "dependencies": [
-    "base >= 2.0.32",
+    "base >= 2.0.69",
     "fdsl >= 0.2.1",
     "? space-age",
-    "? crushing-industry >= 0.1.8",
+    "? crushing-industry >= 0.4.13",
     "? bztin",
     "? bzlead",
     "? bztitanium",
