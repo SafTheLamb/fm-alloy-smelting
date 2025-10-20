@@ -3,13 +3,15 @@ Version: 0.4.0
 Date: 2025-10-20
   Minor Features:
     - Add option to use default furnaces as kilns instead of adding new entities
+    - Optionally make LDS casting also require coke
+    - Add setting to change coke's fuel value
   Modding:
     - Add optional recipe_category parameter to smelt_in_kiln 
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.4
 Date: 2025-06-16
   Changes:
-    - Add electric kiln smelting category (credit: S6X)
+    - Add electric kiln smelting category
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.3
 Date: 2025-06-08
