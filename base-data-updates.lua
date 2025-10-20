@@ -34,11 +34,13 @@ end
 
 -------------------------------------------------------------------------- Furnaces and assemblers
 
-data.raw.item["stone-furnace"].order = "a[furnace]-a[stone]"
-data.raw.item["steel-furnace"].order = "a[furnace]-b[steel]"
-data.raw.item["electric-furnace"].order = "a[furnace]-c[electric]"
-if mods["aai-industry"] then
-  data.raw.item["industrial-furnace"].order = "a[furnace]-d[industrial]"
+if settings.startup["alloy-smelting-create-kilns"].value then
+	data.raw.item["stone-furnace"].order = "a[furnace]-a[stone]"
+	data.raw.item["steel-furnace"].order = "a[furnace]-b[steel]"
+	data.raw.item["electric-furnace"].order = "a[furnace]-c[electric]"
+	if mods["aai-industry"] then
+	  data.raw.item["industrial-furnace"].order = "a[furnace]-d[industrial]"
+	end
 end
 
 for _,machine in pairs(data.raw["assembling-machine"]) do

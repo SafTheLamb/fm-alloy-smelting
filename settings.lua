@@ -1,10 +1,18 @@
 data:extend({
   {
     type = "bool-setting",
+    name = "alloy-smelting-create-kilns",
+    setting_type = "startup",
+    default_value = true,
+    order = "a[options]-a[create-kilns]"
+  },
+  
+  {
+    type = "bool-setting",
     name = "alloy-smelting-coke",
     setting_type = "startup",
     default_value = true,
-    order = "a[smelting]-a[coke-alloys]"
+    order = "b[smelting]-a[coke-alloys]"
   },
 })
 
@@ -15,7 +23,7 @@ if mods["space-age"] then
       name = "alloy-smelting-metallurgy",
       setting_type = "startup",
       default_value = true,
-      order = "a[smelting]-b[metallurgy]"
+      order = "b[smelting]-b[metallurgy]"
     }
   })
 end

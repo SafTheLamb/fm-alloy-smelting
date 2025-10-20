@@ -4,6 +4,8 @@ for _,force in pairs(game.forces) do
   local mods = script.active_mods
 
   if technologies["advanced-material-processing-2"].researched then
-    recipes["electric-kiln"].enabled = true
+	if recipes["electric-kiln"] then
+		recipes["electric-kiln"].enabled = true
+	end
   end
 end

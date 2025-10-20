@@ -1,6 +1,3 @@
-local hit_effects = require("__base__.prototypes.entity.hit-effects")
-local sounds = require("__base__.prototypes.entity.sounds")
-
 local function assemblerpipepicturesfrozen()
   return mods["space-age"] and {
     north = {
@@ -38,6 +35,50 @@ local function assemblerpipepicturesfrozen()
   } or nil
 end
 
+AlloySmelting.electric_kiln_fluid_boxes = {
+  {
+	production_type = "input",
+	pipe_picture = assembler3pipepictures(),
+	pipe_picture_frozen = assemblerpipepicturesfrozen(),
+	pipe_covers = pipecoverspictures(),
+	always_draw_covers = false,
+	volume = 1000,
+	pipe_connections = {{flow_direction="input",direction=defines.direction.south, position={-1, 1}}}
+  },
+  {
+	production_type = "input",
+	pipe_picture = assembler3pipepictures(),
+	pipe_picture_frozen = assemblerpipepicturesfrozen(),
+	pipe_covers = pipecoverspictures(),
+	always_draw_covers = false,
+	volume = 1000,
+	pipe_connections = {{flow_direction="input",direction=defines.direction.south, position={1, 1}}}
+  },
+  {
+	production_type = "output",
+	pipe_picture = assembler3pipepictures(),
+	pipe_picture_frozen = assemblerpipepicturesfrozen(),
+	pipe_covers = pipecoverspictures(),
+	always_draw_covers = false,
+	volume = 100,
+	pipe_connections = {{flow_direction="output", direction=defines.direction.north, position={-1, -1}}}
+  },
+  {
+	production_type = "output",
+	pipe_picture = assembler3pipepictures(),
+	pipe_picture_frozen = assemblerpipepicturesfrozen(),
+	pipe_covers = pipecoverspictures(),
+	always_draw_covers = false,
+	volume = 100,
+	pipe_connections = {{flow_direction="output", direction=defines.direction.north, position={1, -1}}}
+  }
+}
+
+if (not settings.startup["alloy-smelting-create-kilns"].value) then return end
+
+local hit_effects = require("__base__.prototypes.entity.hit-effects")
+local sounds = require("__base__.prototypes.entity.sounds")
+
 data:extend({
   {
     type = "assembling-machine",
@@ -59,7 +100,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.rock(),
     circuit_wire_max_distance = furnace_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["stone-furnace"],
-    crafting_categories = {"kiln-smelting", "organic-or-kiln-smelting"},
+    crafting_categories = AlloySmelting.brick_kiln_categories,
     crafting_speed = 1,
     energy_usage = "90kW",
     energy_source = {
@@ -160,7 +201,7 @@ data:extend({
       {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.8}}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    crafting_categories = {"kiln-smelting", "organic-or-kiln-smelting", "kiln-smelting-or-crafting", "electric-kiln-smelting"},
+    crafting_categories = AlloySmelting.electric_kiln_categories,
     crafting_speed = 2,
     energy_usage = "180kW",
     energy_source = {
@@ -168,44 +209,7 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = {pollution=1}
     },
-    fluid_boxes = {
-      {
-        production_type = "input",
-        pipe_picture = assembler3pipepictures(),
-        pipe_picture_frozen = assemblerpipepicturesfrozen(),
-        pipe_covers = pipecoverspictures(),
-        always_draw_covers = false,
-        volume = 1000,
-        pipe_connections = {{flow_direction="input",direction=defines.direction.south, position={-1, 1}}}
-      },
-      {
-        production_type = "input",
-        pipe_picture = assembler3pipepictures(),
-        pipe_picture_frozen = assemblerpipepicturesfrozen(),
-        pipe_covers = pipecoverspictures(),
-        always_draw_covers = false,
-        volume = 1000,
-        pipe_connections = {{flow_direction="input",direction=defines.direction.south, position={1, 1}}}
-      },
-      {
-        production_type = "output",
-        pipe_picture = assembler3pipepictures(),
-        pipe_picture_frozen = assemblerpipepicturesfrozen(),
-        pipe_covers = pipecoverspictures(),
-        always_draw_covers = false,
-        volume = 100,
-        pipe_connections = {{flow_direction="output", direction=defines.direction.north, position={-1, -1}}}
-      },
-      {
-        production_type = "output",
-        pipe_picture = assembler3pipepictures(),
-        pipe_picture_frozen = assemblerpipepicturesfrozen(),
-        pipe_covers = pipecoverspictures(),
-        always_draw_covers = false,
-        volume = 100,
-        pipe_connections = {{flow_direction="output", direction=defines.direction.north, position={1, -1}}}
-      }
-    },
+    fluid_boxes = AlloySmelting.electric_kiln_fluid_boxes,
     fluid_boxes_off_when_no_fluid_recipe = true,
     vehicle_impact_sound = sounds.generic_impact,
     open_sound = sounds.machine_open,
