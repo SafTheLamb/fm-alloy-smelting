@@ -21,7 +21,7 @@ data:extend({
 		setting_type = "startup",
 		default_value = "1.6MJ",
 		allowed_values = { "1.0MJ", "1.6MJ", "2.0MJ", "3.2MJ", "4.0MJ", "4.8MJ" },		
-		order = "bab"
+		order = "b[smelting]-b[coke-fuel-value]"
 	},
  
 	{
