@@ -9,7 +9,14 @@ if settings.startup["alloy-smelting-coke"].value then
 		data.raw.item["carbon"].fuel_value = "5MJ"
 
 		if settings.startup["alloy-smelting-lds-coke"].value then
-			if (not mods["IridescentIndustry"]) then
+			local add_coke_ok = true
+			if (mods['IridescentIndustry']) then
+				if ((not mods['Arcanyx']) or settings.startup["s6x-prismite-on-nauvis"].value) then
+					add_coke_ok = false
+				end
+			end
+			
+			if (add_coke_ok) then
 				table.insert(data.raw.recipe["casting-low-density-structure"].ingredients, {type = "item", name = "coke", amount = 2})
 			end
 		end
