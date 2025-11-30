@@ -6,31 +6,21 @@ data:extend({
 		default_value = true,
 		order = "a[options]-a[create-kilns]"
 	},
-  
 	{
 		type = "bool-setting",
 		name = "alloy-smelting-coke",
 		setting_type = "startup",
 		default_value = true,
-		order = "b[smelting]-a[coke-alloys]"
+		order = "b[smelting]-b[coke]"
 	},
-  
 	{
 		type = "string-setting",
 		name = "alloy-smelting-coke-fuel-value",
 		setting_type = "startup",
 		default_value = "1.6MJ",
 		allowed_values = { "1.0MJ", "1.6MJ", "2.0MJ", "3.2MJ", "4.0MJ", "4.8MJ" },		
-		order = "b[smelting]-b[coke-fuel-value]"
+		order = "b[smelting]-b[coke]-a[fuel-value]"
 	},
- 
-	{
-		type = "bool-setting",
-		name = "alloy-smelting-lds-coke",
-		setting_type = "startup",
-		default_value = false,
-		order = "b[smelting]-c[coke-casting]"
-	}, 
 })
 
 if mods["space-age"] then
@@ -40,7 +30,14 @@ if mods["space-age"] then
 			name = "alloy-smelting-metallurgy",
 			setting_type = "startup",
 			default_value = true,
-			order = "b[smelting]-b[metallurgy]"
+			order = "b[smelting]-c[metallurgy]"
+		},
+		{
+			type = "bool-setting",
+			name = "alloy-smelting-more-metallurgy",
+			setting_type = "startup",
+			default_value = false,
+			order = "b[smelting]-c[metallurgy]-a[more]"
 		}
 	})
 end

@@ -7,20 +7,6 @@ if settings.startup["alloy-smelting-coke"].value then
 
 	if mods["space-age"] then
 		data.raw.item["carbon"].fuel_value = "5MJ"
-
-		if settings.startup["alloy-smelting-lds-coke"].value then
-			local add_coke_ok = true
-			if (mods['IridescentIndustry']) then
-				if ((not mods['Arcanyx']) or settings.startup["s6x-prismite-on-nauvis"].value) then
-					add_coke_ok = false
-				end
-			end
-			
-			if (add_coke_ok) then
-				table.insert(data.raw.recipe["casting-low-density-structure"].ingredients, {type = "item", name = "coke", amount = 2})
-			end
-		end
-		
 	end
 end
 
@@ -29,6 +15,20 @@ end
 if mods["space-age"] then
   if settings.startup["alloy-smelting-metallurgy"].value then
     AlloySmelting.add_catalyst("casting-steel", {type="item", name="carbon", amount=1}, 5)
+  end
+  if settings.startup["alloy-smelting-more-metallurgy"].value then
+    frep.add_ingredient("molten-iron", {type="item", name="coke", amount=2})
+    frep.add_ingredient("molten-copper", {type="item", name="coke", amount=2})
+    frep.add_ingredient("molten-iron-from-lava", {type="item", name="coke", amount=5})
+    frep.add_ingredient("molten-copper-from-lava", {type="item", name="coke", amount=5})
+
+    local can_add_coke = true
+    if (mods['IridescentIndustry']) then
+      can_add_coke = mods["Arcanyx"] and not settings.startup["s6x-prismite-on-nauvis"].value
+    end
+    if (can_add_coke) then
+      table.insert(data.raw.recipe["casting-low-density-structure"].ingredients, {type = "item", name = "coke", amount = 2})
+    end
   end
 end
 

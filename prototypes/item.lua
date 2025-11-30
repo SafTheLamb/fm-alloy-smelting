@@ -56,3 +56,16 @@ data:extend({
     weight = 2*kg
   }
 })
+
+data:extend({
+	{
+		type = "item",
+		name = "wcu-proxy-kilns",
+		icons = {
+			{icon="__alloy-smelting__/graphics/icons/brick-kiln.png", shift={-4,-4}, scale=0.4},
+			{icon="__alloy-smelting__/graphics/icons/electric-kiln.png", shift={4,4}, scale=0.4}
+		},
+		hidden = true,
+		stack_size = 1
+	}
+})

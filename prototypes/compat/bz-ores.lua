@@ -12,9 +12,11 @@ if mods["bzlead"] then
     frep.add_ingredient("electric-kiln", {type="item", name="lead-expansion-bolt", amount=4})
   end
 
-  if mods["space-age"] and settings.startup["alloy-smelting-metallurgy"].value then
-    frep.add_ingredient("molten-lead-from-lava", {type="item", name="carbon", amount=1})
-    frep.add_ingredient("molten-lead", {type="item", name="carbon", amount=1})
+  if mods["space-age"] then
+    if settings.startup["alloy-smelting-metallurgy"].value then
+      frep.add_ingredient("molten-lead", {type="item", name="carbon", amount=3})
+      frep.add_ingredient("molten-lead-from-lava", {type="item", name="carbon", amount=2})
+    end
   end
 
   ftech.add_unlock("kiln-smelting", "lead-plate")
