@@ -1,7 +1,15 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.1
 Date: ????
-  Changes:
+  Compatibility:
+    - Crushing Industry: Added a setting to change glass to be smelted in kilns instead of furnaces.
+    - Crushing Industry: Tungsten carbide from crushed ore is now also smeltable in kilns.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 2025-11-29
+  Minor Features:
+    - [space-age] Add "More metallurgy" setting, which adds coke to molten metal recipes.
+    - Adding coke to LDS casting recipe has been merged into this new setting.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.2
 Date: 2025-11-22
