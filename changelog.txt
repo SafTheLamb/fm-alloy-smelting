@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.1
-Date: ????
+Date: 2025-12-21
   Compatibility:
     - Crushing Industry: Added a setting to change glass to be smelted in kilns instead of furnaces.
     - Crushing Industry: Tungsten carbide from crushed ore is now also smeltable in kilns.
