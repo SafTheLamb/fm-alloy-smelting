@@ -49,7 +49,7 @@ if mods["crushing-industry"] then
 			name = "alloy-smelting-glass",
 			setting_type = "startup",
 			default_value = true,
-			order = "m[misc]-a"
+			order = "m[misc]-a[glass]"
 		}
 	})
 end
@@ -63,7 +63,19 @@ if mods["bztin"] then
 		  setting_type = "startup",
 		  default_value = true,
 		  hidden = not glass_exists,
-		  order = "m[misc]-b[tin-glass]"
+		  order = "m[misc]-a[glass]b"
+		}
+	})
+end
+
+if mods["scrap-chemistry"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "alloy-smelting-coke-tar",
+			setting_type = "startup",
+			default_value = false,
+			order = "m[misc]-b[tar]"
 		}
 	})
 end

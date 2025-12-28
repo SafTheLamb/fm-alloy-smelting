@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.5.2
+Version: 0.6.0
 Date: ????
-  Changes:
+  Compatibility:
+    - Scrappy Chemistry: New setting "Tar from coke" adds tar as a byproduct of coke production (default off)
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.1
 Date: 2025-12-21

@@ -41,7 +41,8 @@ if settings.startup["alloy-smelting-coke"].value then
       auto_recycle = false,
       energy_required = 6.4,
       ingredients = {{type="item", name="coal", amount=1}},
-      results = {{type="item", name="coke", amount=2}}
+      results = {{type="item", name="coke", amount=2}},
+      main_product = "coke"
     }
   })
   if mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value then
@@ -62,7 +63,8 @@ if settings.startup["alloy-smelting-coke"].value then
         hide_from_player_crafting = settings.startup["crushing-industry-hide-player-crafting"].value == true,
         energy_required = 6.4,
         ingredients = {{type="item", name="crushed-coal", amount=1}},
-        results = {{type="item", name="coke", amount=2}}
+        results = {{type="item", name="coke", amount=2}},
+        main_product = "coke"
       }
     })
   end
@@ -82,7 +84,8 @@ if settings.startup["alloy-smelting-coke"].value then
         auto_recycle = false,
         energy_required = 6.4,
         ingredients = {{type="item", name="carbon", amount=1}},
-        results = {{type="item", name="coke", amount=4}}
+        results = {{type="item", name="coke", amount=4}},
+        main_product = "coke"
       }
     })
   end

@@ -12,7 +12,11 @@ if mods["crushing-industry"] then
 	end
 
 	if settings.startup["crushing-industry-glass"].value and settings.startup["alloy-smelting-glass"].value then
-		data.raw.recipe["glass"].category = "kiln-smelting"
+		if data.raw.recipe["glass"] then
+			data.raw.recipe["glass"].category = "kiln-smelting"
+		else
+			frep.add_category("glass", "kiln-smelting")
+		end
 	end
 
 	if settings.startup["crushing-industry-ore"].value then
