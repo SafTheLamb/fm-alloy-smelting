@@ -12,14 +12,9 @@ local electric_furnace = data.raw.furnace["electric-furnace"]
 electric_furnace.type = "assembling-machine"
 data.raw.furnace["electric-furnace"] = nil
 
-for i=1,#AlloySmelting.brick_kiln_categories do
-	table.insert(stone_furnace.crafting_categories, AlloySmelting.brick_kiln_categories[i])
-	table.insert(steel_furnace.crafting_categories, AlloySmelting.brick_kiln_categories[i])	
-end
-
-for i=1,#AlloySmelting.electric_kiln_categories do
-	table.insert(electric_furnace.crafting_categories, AlloySmelting.electric_kiln_categories[i])
-end
+table.insert(stone_furnace.crafting_categories, "kiln-smelting")
+table.insert(steel_furnace.crafting_categories, "kiln-smelting")
+table.insert(electric_furnace.crafting_categories, "kiln-smelting")
 electric_furnace.fluid_boxes = AlloySmelting.electric_kiln_fluid_boxes
 electric_furnace.fluid_boxes_off_when_no_fluid_recipe = true
 

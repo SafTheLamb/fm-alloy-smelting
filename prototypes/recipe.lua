@@ -35,7 +35,7 @@ if settings.startup["alloy-smelting-coke"].value then
     {
       type = "recipe",
       name = "coke",
-      category = "kiln-smelting",
+      categories = {"kiln-smelting"},
       enabled = false,
       allow_productivity = true,
       auto_recycle = false,
@@ -55,7 +55,7 @@ if settings.startup["alloy-smelting-coke"].value then
           {icon="__crushing-industry__/graphics/icons/crushed-coal.png", shift={-12, -12}, scale=0.4},
           {icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
         },
-        category = "kiln-smelting",
+        categories = {"kiln-smelting"},
         order = "b[chemistry]-A[coke]-b[crushed]",
         enabled = false,
         allow_productivity = true,
@@ -77,7 +77,7 @@ if settings.startup["alloy-smelting-coke"].value then
           {icon="__space-age__/graphics/icons/carbon.png", shift={-12, -12}, scale=0.4},
           {icon="__alloy-smelting__/graphics/icons/coke.png", draw_background=true}
         },
-        category = "kiln-smelting",
+        categories = {"kiln-smelting"},
         order = "b[chemistry]-A[coke]-d[carbon]",
         enabled = false,
         allow_productivity = true,

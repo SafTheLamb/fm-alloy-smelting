@@ -35,8 +35,8 @@ end
 -------------------------------------------------------------------------- Vulcanus
 
 if mods["space-age"] then
-	frep.add_category("tungsten-carbide", "kiln-smelting")
-	frep.change_time("tungsten-carbide", {scale=6.4})
+	frep.add_category("tungsten-carbide", "kiln-smelting-with-fluid")
+	frep.scale_time("tungsten-carbide", 6.4)
 end
 
 -------------------------------------------------------------------------- Gleba
@@ -57,21 +57,9 @@ if settings.startup["alloy-smelting-create-kilns"].value then
 	end
 end
 
-for _,machine in pairs(data.raw["assembling-machine"]) do
-	for _,category in pairs(machine.crafting_categories) do
-		if category == "crafting-with-fluid" then
-			table.insert(machine.crafting_categories, "kiln-smelting-or-crafting")
-		end
-		if category == "organic" then
-			table.insert(machine.crafting_categories, "organic-or-kiln-smelting")
-		end
-	end
-end
-
 -------------------------------------------------------------------------- Misc mods
 
 if mods["hot-metals"] then
 	table.insert(HotMetals.craftingCategories, "kiln-smelting")
-	table.insert(HotMetals.craftingCategories, "kiln-smelting-or-crafting")
-	table.insert(HotMetals.craftingCategories, "organic-or-kiln-smelting")
+	table.insert(HotMetals.craftingCategories, "kiln-smelting-with-fluid")
 end
