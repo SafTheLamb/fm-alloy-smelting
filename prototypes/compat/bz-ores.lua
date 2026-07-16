@@ -28,7 +28,7 @@ end
 
 if mods["bztin"] then
   AlloySmelting.smelt_in_kiln("solder")
-  frep.change_time("solder", {scale=6.4})
+  frep.scale_time("solder", 6.4)
   ftech.add_unlock("kiln-smelting", "solder")
 
   if mods["aai-industry"] then
