@@ -11,7 +11,7 @@ if mods["aai-industry"] then
 	end
 	
 	local industrial_furnace = data.raw["assembling-machine"]["industrial-furnace"]
-	for _,category in pairs(AlloySmelting.electric_kiln_categories) do
-		table.insert(industrial_furnace.crafting_categories, category)
+	if industrial_furnace then
+		table.insert(industrial_furnace.crafting_categories, "kiln-smelting-with-fluid")
 	end
 end
