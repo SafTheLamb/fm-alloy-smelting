@@ -45,7 +45,7 @@ data:extend({
     subgroup = "raw-material",
     order = "b[chemistry]-A[coke]",
     hidden = not settings.startup["alloy-smelting-coke"].value,
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = settings.startup["alloy-smelting-coke-fuel-value"].value or "1.6MJ",
     fuel_emissions_multiplier = 1.5,
     inventory_move_sound = item_sounds.solid_fuel_inventory_move,
